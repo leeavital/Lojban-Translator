@@ -10,7 +10,7 @@ Installing SimpleParse
 
 SimpleParse is a BSD liscensed tool to generate parse trees from an EBNF grammar.
 
-To install, navigate to simple\_parse/ and run 
+To install, navigate to simple_parse/ and run 
 
     [sudo] python setup.py install
 
