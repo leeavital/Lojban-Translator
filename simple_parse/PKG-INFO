@@ -1,0 +1,22 @@
+Metadata-Version: 1.0
+Name: SimpleParse
+Version: 2.1.1a2
+Summary: A Parser Generator for Python (w/mxTextTools derivative)
+Home-page: http://simpleparse.sourceforge.net/
+Author: Mike C. Fletcher
+Author-email: mcfletch@users.sourceforge.net
+License: UNKNOWN
+Description: A Parser Generator for Python (w/mxTextTools derivative)
+        
+        Provides a moderately fast parser generator for use with Python,
+        includes a forked version of the mxTextTools text-processing library
+        modified to eliminate recursive operation and fix a number of
+        undesirable behaviours.
+        
+        Converts EBNF grammars directly to single-pass parsers for many
+        largely deterministic grammars.
+Keywords: parse,parser,parsing,text,ebnf,grammar,generator
+Platform: Any
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
