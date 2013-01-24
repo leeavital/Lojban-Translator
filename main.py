@@ -1,3 +1,4 @@
+import re
 def main():
 	gismufilename="gismu.txt"
 	gismu=getGismu(gismufilename)
@@ -7,15 +8,11 @@ def main():
 
 def getGismu(filename):
 	d={}
-	i=1
 	for line in open(filename):
-		i+=1
-		if(i%3==1):
+		if("[" in line and line[0]!="[" and "x1" not in line):
 			print(line)
-
 			line=line.split()
-			
-			d[line[0]]=line[:-1]
+			d[line[0]]=line[len(line)-1].replace("'","")
 
 	return d
 
