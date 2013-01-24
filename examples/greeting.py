@@ -12,5 +12,8 @@ greet = Word( alphas ) + "," + Word( alphas ) + "!"
 # input string
 hello = "Hello, World!"
 
+
+print greet
+
 # parse input string
 print hello, "->", greet.parseString( hello )
