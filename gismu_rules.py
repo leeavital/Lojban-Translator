@@ -12,9 +12,7 @@ def getString():
 	s=""
 
 	for z in gismuList:
-		s+="Literal(\""+z+"\") ^ "
-	s=s[:len(s)-2]
-	print(s)
+		s ^= Literal(z)
 	return s
 def getGismu(filename):
 	d={}
@@ -26,4 +24,4 @@ def getGismu(filename):
 
 	return d
 
-main()
+getString()
