@@ -15,23 +15,26 @@ lojban_sentence <<  ( LineStart() + bridi_3 + LineEnd() )
 
 
 # literal rules for gismu (the simplest words with meaning)
-gismu = Literal("mi") ^ Literal("ta") ^ Literal("ti")
+gismu = Literal("mi") | Literal("ta") | Literal("ti")
 
 
 # a sumti can be a gismu (or other things, but only gismu for now)
-sumti << gismu ^ bridi_3
-
+sumti << gismu | bridi_3
 
 selbri <<  Literal("vecnu")
 
 
 # there are three forms of a bridi/3
-bridi_3 <<  ( sumti + selbri + sumti + sumti ) 
-bridi_3 ^=  ( selbri + sumti + sumti + sumti )
-bridi_3 ^=  ( sumti + sumti + sumti + selbri )
-bridi_3 ^=  ( sumti + sumti + selbri + sumti )
+# bridi_3 <<  ( sumti + selbri + sumti + sumti ) 
+# bridi_3 ^=  ( selbri + sumti + sumti + sumti )
+# bridi_3 ^=  ( sumti + sumti + sumti + selbri )
+# bridi_3 ^=  ( sumti + sumti + selbri + sumti )
 
 
+bridi_3 <<  Group( sumti + selbri + sumti + sumti )
+bridi_3 |=  Group( selbri + sumti + sumti + sumti )
+bridi_3 |=  Group( sumti + sumti + sumti + selbri )
+bridi_3 |=  Group( sumti + sumti + selbri + sumti )
 
 
 
@@ -42,7 +45,7 @@ def parse( s ):
       return lojban_sentence.parseString( s ) 
 
    except:
-      print "cannot parse: %s" % e
+      print "cannot parse: %s" % s
 
 
 
