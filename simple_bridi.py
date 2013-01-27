@@ -11,9 +11,12 @@ gismu = Literal("mi") ^ Literal("ta") ^ Literal("ti")
 sumti = gismu
 
 
+selbri = Literal("vecnu")
 
 
+# there are three forms of a bridi/3
+bridi_3 = ( sumti + selbri + sumti + sumti ) 
+bridi_3 ^= ( selbri + sumti + sumti + sumti )
 
 
-
-
+print bridi_3.parseString(" mi vecnu ti ta ")
