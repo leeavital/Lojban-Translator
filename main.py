@@ -1,22 +1,14 @@
 import re
 def main():
-	gismufilename="gismu.txt"
-	gismu=getGismu(gismufilename)
-	printDict(gismu)
-
-
-
-def getGismu(filename):
-	d={}
-	for line in open(filename):
-		if("[" in line and line[0]!="[" and "x1" not in line):
-			print(line)
-			line=line.split()
-			d[line[0]]=line[len(line)-1].replace("'","")
-
-	return d
-
-def printDict(d):
-	for key in d:
-		print(key+": "+d[key])
+	print("Welcome to Ben, Zach and Lee's Lojban Translator\nEnter a word or phrase in lojban to continue.\nEnter \"exit\" to quit.")
+	i=""
+	while(i!="exit"):
+		i=raw_input()
+		if(i=="exit"):
+			break
+		t=translate(i)
+		print(t)
+	print("Thanks for using our software!  Go fuck yourself!")
+def translate(t):
+	return "Penis"
 main()
