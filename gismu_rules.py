@@ -17,7 +17,7 @@ def main():
 	later=[]
 	engList=[]
 	for line in open("wordsEn.txt"):
-		engList.append(line.replace("\r\n",""))
+		engList.append(line.replace("\n",""))
 	f=open("gismu.txt")
 	for line in f:
 		line=line.split()
@@ -33,7 +33,7 @@ def main():
 			engWord=line[3]
 			i=4
 		#g=gismu(lojbanWord,engWord,[])
-
+		print(line)
 		rest=line[i:]
 		if("x1" in rest):
 			if(rest[0][0]!="x"):
@@ -103,9 +103,10 @@ def main():
 		else:
 			later.append(rest)
 		#print(later)
-	for x in gismuList:
+	#for x in gismuList:
+		#print(x)
+	for x in later:
 		print(x)
-
 
 
 
