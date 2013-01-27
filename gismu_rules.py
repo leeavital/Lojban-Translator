@@ -33,7 +33,7 @@ def main():
 			engWord=line[3]
 			i=4
 		#g=gismu(lojbanWord,engWord,[])
-		print(line)
+		#print(line)
 		rest=line[i:]
 		if("x1" in rest):
 			if(rest[0][0]!="x"):
@@ -103,10 +103,10 @@ def main():
 		else:
 			later.append(rest)
 		#print(later)
-	#for x in gismuList:
-		#print(x)
-	for x in later:
+	for x in gismuList:
 		print(x)
+	#for x in later:
+	#	print(x)
 
 
 
