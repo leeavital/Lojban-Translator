@@ -12,5 +12,6 @@ def main():
     print("terminating...")
 
 def translate(t):
-	return "Penis"
+    return "placeholder-result"
+
 main()
