@@ -3,44 +3,49 @@ from pyparsing import *
 
 # here are the rules
 
+# forwand declarations
+lojban_sentence = Forward()
+sumti = Forward()
+selbri = Forward()
+bridi_3 = Forward()
+
+
+lojban_sentence <<  ( LineStart() + bridi_3 + LineEnd() )
+
+
+
 # literal rules for gismu (the simplest words with meaning)
 gismu = Literal("mi") ^ Literal("ta") ^ Literal("ti")
 
 
 # a sumti can be a gismu (or other things, but only gismu for now)
-sumti = gismu 
+sumti << gismu ^ bridi_3
 
 
-selbri = Literal("vecnu")
+selbri <<  Literal("vecnu")
 
 
 # there are three forms of a bridi/3
-bridi_3 = ( sumti + selbri + sumti + sumti ) 
-bridi_3 ^= ( selbri + sumti + sumti + sumti )
-bridi_3 ^= ( sumti + sumti + sumti + selbri )
-bridi_3 ^= ( sumti + sumti + selbri + sumti )
-
-
-
-sumti ^= bridi_3
-
-lojban_sentence = LineStart() + (bridi_3) + LineEnd()
+bridi_3 <<  ( sumti + selbri + sumti + sumti ) 
+bridi_3 ^=  ( selbri + sumti + sumti + sumti )
+bridi_3 ^=  ( sumti + sumti + sumti + selbri )
+bridi_3 ^=  ( sumti + sumti + selbri + sumti )
 
 
 
 
-def bridi_3_parse( s ):
-   return lojban_sentence.parseString( s )
 
-def parse( s ):   
+
+def parse( s ): 
    
    try:
-      return bridi_3_parse( s )
+      return lojban_sentence.parseString( s ) 
 
    except:
-      print "cannot parse: %s" % s
+      print "cannot parse: %s" % e
 
 
 
 
-print parse( "mi vecnu ti mi vecnu ti mi" )
+print parse( "mi vecnu ta ti" )
+print parse("mi vecnu ta mi vecnu ta ti")
