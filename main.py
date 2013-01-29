@@ -8,7 +8,10 @@ def main():
 			break
 		t=translate(i)
 		print(t)
-	print("Thanks for using our software!  Go fuck yourself!")
+
+    print("terminating...")
+
 def translate(t):
-	return "Penis"
+    return "placeholder-result"
+
 main()
