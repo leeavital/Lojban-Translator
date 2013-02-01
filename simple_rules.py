@@ -1,6 +1,18 @@
 import camxes
 
 
+gismuDict = {
+   "vecnu": "buy"
+}
+
+
+sumti = {
+   "mi": "I",
+   "ta": "that",
+   "ti": "this"
+}
+
+
 def getEnglishTranslation( sentence ):
    """parse a lojban sentence
       return the english translation"""
@@ -17,6 +29,9 @@ def translateSentence( rootNode ):
 
    threeKoha = rootNode.find( 'KOhA' )
    
+   
+   
+    
    oneGismu = rootNode.find( 'gismu' )
 
    print oneGismu
