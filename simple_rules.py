@@ -6,13 +6,20 @@ def getEnglishTranslation( sentence ):
       return the english translation"""
 
    rootNode = camxes.parse( sentence )
- 
+  
+    
    return translateSentence( rootNode ) 
 
 
 
 def translateSentence( rootNode ):
    """get it to translate one level deep"""
+
+   threeKoha = rootNode.find( 'KOhA' )
+   
+   oneGismu = rootNode.find( 'gismu' )
+
+   print oneGismu
 
    return rootNode
 
