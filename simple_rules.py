@@ -1,54 +1,24 @@
-from pyparsing import *
+import camxes
 
 
-# here are the rules
+def getEnglishTranslation( sentence ):
+   """parse a lojban sentence
+      return the english translation"""
 
-# forwand declarations
-lojban_sentence = Forward()
-sumti = Forward()
-selbri = Forward()
-bridi_3 = Forward()
-
-
-lojban_sentence <<  ( LineStart() + bridi_3 + LineEnd() )
+   rootNode = camxes.parse( sentence )
+ 
+   return translateSentence( rootNode ) 
 
 
 
-# literal rules for gismu (the simplest words with meaning)
-gismu = Literal("mi") | Literal("ta") | Literal("ti")
+def translateSentence( rootNode ):
+   """get it to translate one level deep"""
 
-
-# a sumti can be a gismu (or other things, but only gismu for now)
-sumti << gismu | bridi_3
-
-selbri <<  Literal("vecnu")
-
-
-# there are three forms of a bridi/3
-# bridi_3 <<  ( sumti + selbri + sumti + sumti ) 
-# bridi_3 ^=  ( selbri + sumti + sumti + sumti )
-# bridi_3 ^=  ( sumti + sumti + sumti + selbri )
-# bridi_3 ^=  ( sumti + sumti + selbri + sumti )
-
-
-bridi_3 <<  Group( sumti + selbri + sumti + sumti )
-bridi_3 |=  Group( selbri + sumti + sumti + sumti )
-bridi_3 |=  Group( sumti + sumti + sumti + selbri )
-bridi_3 |=  Group( sumti + sumti + selbri + sumti )
+   return rootNode
 
 
 
 
-def parse( s ): 
-   
-   try:
-      return lojban_sentence.parseString( s ) 
-
-   except:
-      print "cannot parse: %s" % s
-
-
-
-
-print parse( "mi vecnu ta ti" )
-print parse("mi vecnu ta mi vecnu ta ti")
+if __name__ == "__main__":
+   print getEnglishTranslation( "mi vecnu ti ta" )
+   print getEnglishTranslation( "mi ti vecnu ta" )
