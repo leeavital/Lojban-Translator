@@ -1,10 +1,11 @@
 import camxes
-from gismu_rules import getSentenceFromGismu, getDict
+from gismu_rules import getSentenceFromGismu, getDict, getCmavo
 
 
 
 print "loading the grammar (this may take up to a minute)..."
 gismuDict = getDict()
+cmavoDict = getCmavo()  
 print "the grammer was loaded"
 
 
@@ -46,7 +47,7 @@ def translateSentence( rootNode ):
    
    print gismu1
     
-   return getSentenceFromGismu( gismu1, strKoha, gismuDict ) 
+   return getSentenceFromGismu( gismu1, strKoha, gismuDict, cmavoDict ) 
 
    # return sumti[koha1] + gismuDict[gismu1] + sumti[koha2] + " from " + sumti[koha3]
 
