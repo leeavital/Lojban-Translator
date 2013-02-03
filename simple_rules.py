@@ -1,9 +1,10 @@
 import camxes
+from gismu_rules import getSentenceFromGismu, getDict
 
 
-gismuDict = {
-   "vecnu": "buy"
-}
+
+gismuDict = getDict()
+
 
 
 sumti = {
@@ -26,23 +27,32 @@ def getEnglishTranslation( sentence ):
 
 def translateSentence( rootNode ):
    """get it to translate one level deep"""
-
+   
+   # for efficiency
+   global gismuDict
 
    
    # extremely naive 
    threeKoha = rootNode.find( 'KOhA' )
    
-   koha1 = str( threeKoha[0].lojban )
-   koha2 = str( threeKoha[1].lojban ) 
-   koha3 = str( threeKoha[2].lojban ) 
+   
+   strKoha = [ str(x.lojban) for x in threeKoha ]
+   
+    
+   # koha1 = str( threeKoha[0].lojban )
+   # koha2 = str( threeKoha[1].lojban ) 
+   # koha3 = str( threeKoha[2].lojban ) 
    
    oneGismu = rootNode.find( 'gismu' )
   
-   gismu1 = oneGismu[0].lojban
-
+   gismu1 = str( oneGismu[0].lojban )
    
+   
+   print gismu1
+    
+   return getSentenceFromGismu( gismu1, strKoha, gismuDict ) 
 
-   return sumti[koha1] + gismuDict[gismu1] + sumti[koha2] + " from " + sumti[koha3]
+   # return sumti[koha1] + gismuDict[gismu1] + sumti[koha2] + " from " + sumti[koha3]
 
 
 

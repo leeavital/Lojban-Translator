@@ -128,11 +128,11 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary):
 
 	return retString
 
-def main():
-	print("Loading Dictionary...")
-	d=getDict()
-	print("Done Loading Dictionary")
-	print(getSentenceFromGismu("bridi",["bolci","bruna"],d))
+# def main():
+# 	print("Loading Dictionary...")
+# 	d=getDict()
+# 	print("Done Loading Dictionary")
+# 	print(getSentenceFromGismu("bridi",["bolci","bruna"],d))
 	
 
-main()
+# main()
