@@ -109,8 +109,21 @@ def getDict():
 	#	print(x)
 	return gismuList
 
+def getCmavo():
+	f=open("cmavo.txt")
+	d={}
+	for line in f:
 
+		newLine=re.split(r"\W{10}",line)
+		newLine=newLine[0].split()
+		t=newLine[2:]
+		trans=""
+		for x in t:
+			trans+=x+" "
 
+		d[newLine[0]]=trans
+
+	return d
 
 def getSentenceFromGismu(lojbanWord,arguments,dictionary):
 	curObject=dictionary[lojbanWord]
@@ -128,11 +141,6 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary):
 
 	return retString
 
-# def main():
-# 	print("Loading Dictionary...")
-# 	d=getDict()
-# 	print("Done Loading Dictionary")
-# 	print(getSentenceFromGismu("bridi",["bolci","bruna"],d))
-	
+
 
 # main()
