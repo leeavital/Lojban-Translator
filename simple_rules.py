@@ -3,15 +3,11 @@ from gismu_rules import getSentenceFromGismu, getDict
 
 
 
+print "loading the grammar (this may take up to a minute)..."
 gismuDict = getDict()
+print "the grammer was loaded"
 
 
-
-sumti = {
-   "mi": "I",
-   "ta": "that",
-   "ti": "this"
-}
 
 
 def getEnglishTranslation( sentence ):
