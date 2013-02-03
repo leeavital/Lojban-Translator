@@ -12,8 +12,8 @@ class gismu:
 		for x in range(len(self.xs)):
 			r+=("ARG: "+str(x)+" "+self.xs[x])
 		return r
-def main():
-	gismuList=[]
+def getDict():
+	gismuList={}
 	later=[]
 	engList=[]
 	for line in open("wordsEn.txt"):
@@ -99,22 +99,40 @@ def main():
 					a.append(rest[r])
 
 			g=gismu(lojbanWord,engWord,a)
-			gismuList.append(g)
+			gismuList[lojbanWord]=g
 		else:
 			later.append(rest)
 		#print(later)
-	for x in gismuList:
-		print(x)
+
 	#for x in later:
+	#print(gismuList)
 	#	print(x)
+	return gismuList
 
 
 
 
+def getSentenceFromGismu(lojbanWord,arguments,dictionary):
+	curObject=dictionary[lojbanWord]
+	retString=""
+	try:
+		retString+=dictionary[arguments[0]].englishPhrase
+	except:
+		retString+=arguments[0]
+	for x in range(len(arguments)-1):
+		retString+=curObject.xs[x]
+		try:
+			retString+=dictionary[arguments[x+1]].englishPhrase
+		except:
+			retString+=arguments[x+1]
 
+	return retString
 
+def main():
+	print("Loading Dictionary...")
+	d=getDict()
+	print("Done Loading Dictionary")
+	print(getSentenceFromGismu("bridi",["bolci","bruna"],d))
+	
 
-
-
-
-main()	
+main()

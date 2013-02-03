@@ -67,6 +67,203 @@ abbot
 abbotcies
 abbotcy
 abbots
+Afghan
+Albanian
+Algerian
+Andorran
+Angolan
+Antiguans, Barbudans
+Argentine or Argentinean
+Armenian
+Australian or Ozzie or Aussie
+Austrian
+Azerbaijani
+Bahamian
+Bahraini
+Bangladeshi
+Barbadian or Bajuns
+Belarusian
+Belgian
+Belizean
+Beninese
+Bhutanese
+Bolivian
+Bosnian, Herzegovinian
+Motswana (singular), Batswana (plural)
+Brazilian
+Bruneian
+Bulgarian
+Burkinabe
+Burundian
+Cambodian
+Cameroonian
+Canadian
+Cape Verdian or Cape Verdean
+Central African
+Chadian
+Chilean
+Chinese
+Colombian
+Comoran
+Congolese
+Congolese
+Costa Rican
+Ivorian
+Croat or Croatian
+Cuban
+Cypriot
+Czech
+Dane or Danish
+Djibouti
+Dominican
+Dominican
+East Timorese
+Ecuadorean
+Egyptian
+Salvadoran
+Equatorial Guinean or Equatoguinean
+Eritrean
+Estonian
+Ethiopian
+Fijian
+Finn or Finnish
+French or Frenchman or Frenchwoman
+Gabonese
+Gambian
+Georgian
+German
+Ghanaian
+Greek
+Grenadian or Grenadan
+Guatemalan
+Guinean
+Guinea-Bissauan
+Guyanese
+Haitian
+Honduran
+Hungarian
+Icelander
+Indian
+Indonesian
+Iranian
+Iraqi
+Irishman or Irishwoman or Irish
+Israeli
+Italian
+Jamaican
+Japanese
+Jordanian
+Kazakhstani
+Kenyan
+I-Kiribati
+North Korean
+South Korean
+Kosovar
+Kuwaiti
+Kyrgyz or Kirghiz
+Lao or Laotian
+Latvian
+Lebanese
+Mosotho (plural Basotho)
+Liberian
+Libyan
+Liechtensteiner
+Lithuanian
+Luxembourger
+Macedonian
+Malagasy
+Malawian
+Malaysian
+Maldivan
+Malian
+Maltese
+Marshallese
+Mauritanian
+Mauritian
+Mexican
+Micronesian
+Moldovan
+Monegasque or Monacan
+Mongolian
+Montenegrin
+Moroccan
+Mozambican
+Burmese or Myanmarese
+Namibian
+Nauruan
+Nepalese
+Netherlander, Dutchman, Dutchwoman, Hollander or Dutch (collective)
+New Zealander or Kiwi
+Nicaraguan
+Nigerien
+Nigerian
+Norwegian
+Omani
+Pakistani
+Palauan
+Panamanian
+Papua New Guinean
+Paraguayan
+Peruvian
+Filipino
+Pole or Polish
+Portuguese
+Qatari
+Romanian
+Russian
+Rwandan
+Kittian and Nevisian
+Saint Lucian
+Samoan
+Sammarinese or San Marinese
+Sao Tomean
+Saudi or Saudi Arabian
+Senegalese
+Serbian
+Seychellois
+Sierra Leonean
+Singaporean
+Slovak or Slovakian
+Slovene or Slovenian
+Solomon Islander
+Somali
+South African
+Spaniard or Spanish
+Sri Lankan
+Sudanese
+Surinamer
+Swazi
+Swede or Swedish
+Swiss
+Syrian
+Taiwanese
+Tajik or Tadzhik
+Tanzanian
+Thai
+Togolese
+Tongan
+Trinidadian
+Tobagonian
+Tunisian
+Turk
+Turkish
+Turkmen
+Tuvaluan
+Ugandan
+Ukrainian
+Emirian
+Briton
+British
+American
+Uruguayan
+Uzbek or Uzbekistani
+Ni-Vanuatu
+none
+Venezuelan
+Vietnamese
+Yemeni or Yemenite
+Zambian
+Zimbabwean
 abbotship
 abbotships
 abbott
