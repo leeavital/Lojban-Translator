@@ -36,9 +36,8 @@ def translateSentence( rootNode ):
    theKoha = [ str(x.lojban) for x in threeKoha ]
    
    
-   theSe = rootNode.find( 'SE`' )
+   theSe = rootNode.find( 'SE' )
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'se':
-      print "there was a SE"
       theKoha[0], theKoha[1] = theKoha[1], theKoha[0] 
     
    oneGismu = rootNode.find( 'gismu' )
