@@ -36,26 +36,20 @@ def translateSentence( rootNode ):
    
    theKoha = [ str(x.lojban) for x in threeKoha ]
    
-   # look for modifiers 
+   # hard coded modifiers
    theSe = rootNode.find( 'SE' )
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'se':
 	  print "found a SE"
 	  theKoha[0], theKoha[1] = theKoha[1], theKoha[0] 
    
-      
-   theTe = rootNode.find( 'TE' )
-   if theTe != None and len(theTe) > 0 and theVe[0].lojban == 'te':
+   if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'te':
 	  print "found a TE"
 	  theKoha[0], theKoha[2] = theKoha[2], theKoha[0]
    
-   theVe = rootNode.find( 'VE' )
-   if theVe != None and len(theVe) > 0 and theVe[0].lojban == 've':
+   if theSe != None and len(theSe) > 0 and theSe[0].lojban == 've':
 	  print "found a VE"
 	  theKoha[0], theKoha[3] = theKoha[3], theKoha[0]
 
-   
-
-   
        
     
    oneGismu = rootNode.find( 'gismu' )
