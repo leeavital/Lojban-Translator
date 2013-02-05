@@ -129,7 +129,7 @@ def getCmavo():
 
 def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 	curObject=dictionary[lojbanWord]
-	print(curObject.xs)
+	#print(curObject.xs)
 
 	retString=""
 
