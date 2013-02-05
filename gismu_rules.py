@@ -145,11 +145,4 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 
 	return retString
 
-z=getDict()
-#for x in z:
-	#print z[x]
-	#pass	
-print(getSentenceFromGismu("tavla",["mi","do","ti"],z,getCmavo()))
-print(getSentenceFromGismu("bloti",["ta"],z,getCmavo()))
 
-# main()
