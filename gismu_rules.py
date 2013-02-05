@@ -9,9 +9,11 @@ class gismu:
 	    self.xs=xs
 	def __str__(self):
 		r=self.lojbanWord+":  "
+		z=0
 		for x in range(len(self.xs)):
 			r+=("ARG: "+str(x)+" "+self.xs[x])
-		return r
+			z=x
+		return r+"ARG: "+str(z+1)
 def getDict():
 	gismuList={}
 	later=[]
@@ -93,11 +95,11 @@ def getDict():
 			#print(rest)
 			rest=re.split("x\d",rest)
 			#print(rest)
-			a=[]
-			for r in range(len(rest)):
-				if r%2==1:
-					a.append(rest[r])
-
+			a=rest[1:-1]
+			#for r in range(len(rest)):
+			#	if r%2==1:
+			#		a.append(rest[r])
+			#print(a)
 			g=gismu(lojbanWord,engWord,a)
 			gismuList[lojbanWord]=g
 		else:
@@ -127,24 +129,26 @@ def getCmavo():
 
 def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 	curObject=dictionary[lojbanWord]
+	print(curObject.xs)
+
 	retString=""
-	if(arguments[0] in dictionary):
-		retString+=dictionary[arguments[0]].englishPhrase
-	elif(arguments[0] in dictionary2):
-		retString+=dictionary2[arguments[0]]
-	else:
-		retString+=arguments[0]
-	for x in range(len(arguments)-1):
-		retString+=curObject.xs[x]
-		if(arguments[x+1] in dictionary):
-			retString+=dictionary[arguments[x+1]].englishPhrase
-		elif(arguments[x+1] in dictionary2):
-			retString+=dictionary2[arguments[x+1]]
+
+	for x in range(len(arguments)):
+		if(arguments[x] in dictionary):
+			retString+=dictionary[arguments[x]].englishPhrase
+		elif(arguments[x] in dictionary2):
+			retString+=dictionary2[arguments[x]]
 		else:
-			retString+=arguments[x+1]
+			retString+=arguments[arguments[x]]
+		if(x!=len(arguments)-1):
+			retString+=curObject.xs[x]
 
 	return retString
 
-
-
+#z=getDict()
+#for x in z:
+	#print z[x]
+	#pass	
+#print(z["tavla"])
+#print(getSentenceFromGismu("tavla",["mi","do","balvi"],z,getCmavo()))
 # main()
