@@ -129,10 +129,9 @@ def getCmavo():
 
 def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 	curObject=dictionary[lojbanWord]
-	print(curObject.xs)
+	#print(curObject.xs)
 
 	retString=""
-
 	for x in range(len(arguments)):
 		if(arguments[x] in dictionary):
 			retString+=dictionary[arguments[x]].englishPhrase
@@ -140,15 +139,17 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 			retString+=dictionary2[arguments[x]]
 		else:
 			retString+=arguments[arguments[x]]
-		if(x!=len(arguments)-1):
-			retString+=curObject.xs[x]
+		if(x!=len(arguments)-1 or len(arguments)==1):
+			s=curObject.xs[x].split("[")[0]
+			retString+=s
 
 	return retString
 
-#z=getDict()
+z=getDict()
 #for x in z:
 	#print z[x]
 	#pass	
-#print(z["tavla"])
-#print(getSentenceFromGismu("tavla",["mi","do","balvi"],z,getCmavo()))
+print(getSentenceFromGismu("tavla",["mi","do","ti"],z,getCmavo()))
+print(getSentenceFromGismu("bloti",["ta"],z,getCmavo()))
+
 # main()
