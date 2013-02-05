@@ -29,6 +29,8 @@ def translateSentence( rootNode ):
    global gismuDict
 
    
+   print rootNode
+      
    # extremely naive 
    threeKoha = rootNode.find( 'KOhA' )
    
@@ -39,6 +41,8 @@ def translateSentence( rootNode ):
    theSe = rootNode.find( 'SE' )
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'se':
       theKoha[0], theKoha[1] = theKoha[1], theKoha[0] 
+   
+    
     
    oneGismu = rootNode.find( 'gismu' )
   
@@ -46,7 +50,7 @@ def translateSentence( rootNode ):
    
    
    print gismu1
-    
+       
    return getSentenceFromGismu( gismu1, theKoha, gismuDict, cmavoDict ) 
 
    # return sumti[koha1] + gismuDict[gismu1] + sumti[koha2] + " from " + sumti[koha3]
