@@ -37,4 +37,26 @@ OR
 
 4. After running enter "exit" to quit
 
+Examples To Try
+===============
 
+do patfu mi / do mi patfu
+you are the father of me
+
+mi vecnu ti do
+i sell this to you
+
+do blari'o
+you are blue/green
+
+ta bloti
+that is a boat
+
+tu plise tricu
+that yonder is an apple tree
+
+xunre barda gerku
+that is a big and red dog
+
+many other basic examples can be found here:
+http://www.lojban.org/tiki/tiki-index.php?page=Simple+phrases
