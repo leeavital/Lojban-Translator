@@ -1,6 +1,6 @@
 import camxes
 from gismu_rules import getSentenceFromGismu, getDict, getCmavo
-
+import re
 
 
 print "Loading the grammar and dictionary (this may take up to a minute)..."
@@ -22,15 +22,25 @@ def getEnglishTranslation( sentence ):
    """parse a lojban sentence
       return the english translation"""
 
-   rootNode = camxes.parse( sentence )
-  
+   
+   name = ""
+   
+   if len( re.findall( r"\..*\.", sentence) ) > 0:
+	  print "found a name"
+	  name = re.findall( r"\..*\.", sentence)[0]
+	  sentence = re.sub( r"\..*\.", "jbovlaste", sentence)
+   
+
+
+   rootNode = camxes.parse( sentence ) 
+    
    if tree:
       print rootNode
-   return translateSentence( rootNode ) 
+   return translateSentence( rootNode, name ) 
 
 
 
-def translateSentence( rootNode ):
+def translateSentence( rootNode, name="" ):
    """get it to translate one level deep"""
    
    # for efficiency
@@ -60,8 +70,14 @@ def translateSentence( rootNode ):
   
    gismu1 = str( oneGismu[0].lojban )
    
+   for i in range( len(theKoha) ):
+	  if theKoha[i] == "jbovlaste"  and not name == "":
+		 print "replacing a name"
+		 theKoha[i] = name 
+		 print theKoha
    
-       
+   print theKoha
+   print gismu1 
    return getSentenceFromGismu( gismu1, theKoha, gismuDict, cmavoDict ) 
 
 
