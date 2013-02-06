@@ -3,11 +3,16 @@ Lojban-Translator
 
 A lojban to english translator written in python.
 
+Required Software
+=================
+
+* python 2.7
+* easy_install (python package manager)
+* camxes (python package)
 
 
-Installation
-============
-
+Installation and Usage
+======================
 
 Getting this project working can be a bit daunting, especially when using a non-unix based system.
 
