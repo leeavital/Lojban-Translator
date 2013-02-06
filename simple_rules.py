@@ -24,8 +24,7 @@ def printTree():
 
 
 
-
-
+# return the enlish translation of a lojban sentence
 def getEnglishTranslation( sentence ):
    """parse a lojban sentence
       return the english translation"""
@@ -52,6 +51,7 @@ def getEnglishTranslation( sentence ):
 
 
 
+# translate the word 
 def getWordTranslation(word):
    if(word in gismuDict):
       return str(gismuDict[word])
@@ -62,6 +62,7 @@ def getWordTranslation(word):
 
 
 
+# get the enslish sentence from the parse tree
 def translateSentence( rootNode, name="" ):
    """get it to translate one level deep"""
    
@@ -104,6 +105,7 @@ def translateSentence( rootNode, name="" ):
    print theKoha
    print gismu1 
    return getSentenceFromGismu( gismu1, theKoha, gismuDict, cmavoDict ) 
+
 
 
 
