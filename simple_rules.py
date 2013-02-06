@@ -3,21 +3,28 @@ from gismu_rules import getSentenceFromGismu, getDict, getCmavo
 
 
 
-print "loading the grammar (this may take up to a minute)..."
+print "Loading the grammar and dictionary (this may take up to a minute)..."
 gismuDict = getDict()
 cmavoDict = getCmavo()  
-print "the grammer was loaded"
+print "The grammar was loaded sucessfully"
 
-
-
-
+tree=False
+def printG():
+   for x in gismuDict:
+      print(gismuDict[x])
+def printC():
+   for x in cmavoDict:
+      print(x+": "+cmavoDict[x])
+def printTree():
+   tree=True
 def getEnglishTranslation( sentence ):
    """parse a lojban sentence
       return the english translation"""
 
    rootNode = camxes.parse( sentence )
   
-    
+   if(tree):
+      print(rootNode)
    return translateSentence( rootNode ) 
 
 

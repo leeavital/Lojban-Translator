@@ -1,8 +1,6 @@
 import re, string
 class gismu:
 	__slots__=['lojbanWord','englishPhrase','xs']
-
-
 	def __init__(self, lojbanWord,englishPhrase,xs):
 	    self.lojbanWord=lojbanWord
 	    self.englishPhrase=englishPhrase
@@ -138,7 +136,7 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 		elif(arguments[x] in dictionary2):
 			retString+=dictionary2[arguments[x]]
 		else:
-			retString+=arguments[arguments[x]]
+			retString+=arguments[x]
 		if(x!=len(arguments)-1 or len(arguments)==1):
 			s=curObject.xs[x].split("[")[0]
 			retString+=s
