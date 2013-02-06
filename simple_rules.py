@@ -16,6 +16,7 @@ def printC():
    for x in cmavoDict:
       print(x+": "+cmavoDict[x])
 def printTree():
+   global tree
    tree=True
 def getEnglishTranslation( sentence ):
    """parse a lojban sentence
@@ -23,8 +24,8 @@ def getEnglishTranslation( sentence ):
 
    rootNode = camxes.parse( sentence )
   
-   if(tree):
-      print(rootNode)
+   if tree:
+      print rootNode
    return translateSentence( rootNode ) 
 
 
@@ -35,7 +36,6 @@ def translateSentence( rootNode ):
    # for efficiency
    global gismuDict
 
-   print rootNode
       
    # extremely naive 
    threeKoha = rootNode.find( 'KOhA' )
@@ -46,15 +46,12 @@ def translateSentence( rootNode ):
    # hard coded modifiers
    theSe = rootNode.find( 'SE' )
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'se':
-	  print "found a SE"
 	  theKoha[0], theKoha[1] = theKoha[1], theKoha[0] 
    
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'te':
-	  print "found a TE"
 	  theKoha[0], theKoha[2] = theKoha[2], theKoha[0]
    
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 've':
-	  print "found a VE"
 	  theKoha[0], theKoha[3] = theKoha[3], theKoha[0]
 
        
@@ -64,12 +61,8 @@ def translateSentence( rootNode ):
    gismu1 = str( oneGismu[0].lojban )
    
    
-   print gismu1
        
    return getSentenceFromGismu( gismu1, theKoha, gismuDict, cmavoDict ) 
-
-   # return sumti[koha1] + gismuDict[gismu1] + sumti[koha2] + " from " + sumti[koha3]
-
 
 
 
