@@ -38,11 +38,13 @@ def getEnglishTranslation( sentence ):
 	  name = re.findall( r"\..*\.", sentence)[0]
 	  print name
 	  
-	  sentence = re.sub( r"\..*\.", "gismu", sentence)
+	  sentence = re.sub( r"\..*\.", "ko", sentence)
+
+	  print sentence
    
 
 
-   rootNode = camxes.parse( sentence ) 
+   rootNode = camxes.parse( sentence )
     
    if tree:
       print rootNode
@@ -67,7 +69,7 @@ def translateSentence( rootNode, name="" ):
    if name == "":
 	  print "there was no name"
    else:
-	  print "the name is .lee."
+	  print "the name is %s and the sentence is %s" % (name, rootNode.lojban)
     
    # for efficiency
    global gismuDict
@@ -77,7 +79,7 @@ def translateSentence( rootNode, name="" ):
    
    
    theKoha = [ str(x.lojban) for x in threeKoha ]
-   
+    
    # hard coded modifiers
    theSe = rootNode.find( 'SE' )
    if theSe != None and len(theSe) > 0 and theSe[0].lojban == 'se':
@@ -96,11 +98,8 @@ def translateSentence( rootNode, name="" ):
    gismu1 = str( oneGismu[0].lojban )
    
    for i in range( len(theKoha) ):
-	  if theKoha[i] == "gismu"  and not name == "":
-		 print "replacing a name with %s "  % name
-		 
+	  if theKoha[i] == "ko"  and not name == "":
 		 theKoha[i] = name 
-		 print theKoha
    
    print theKoha
    print gismu1 
