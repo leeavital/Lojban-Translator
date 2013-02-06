@@ -15,9 +15,17 @@ def printG():
 def printC():
    for x in cmavoDict:
       print(x+": "+cmavoDict[x])
+
+
+# turn on the prnt flag
 def printTree():
    global tree
    tree=True
+
+
+
+
+
 def getEnglishTranslation( sentence ):
    """parse a lojban sentence
       return the english translation"""
@@ -28,7 +36,9 @@ def getEnglishTranslation( sentence ):
    if len( re.findall( r"\..*\.", sentence) ) > 0:
 	  print "found a name"
 	  name = re.findall( r"\..*\.", sentence)[0]
-	  sentence = re.sub( r"\..*\.", "jbovlaste", sentence)
+	  print name
+	  
+	  sentence = re.sub( r"\..*\.", "gismu", sentence)
    
 
 
@@ -36,16 +46,31 @@ def getEnglishTranslation( sentence ):
     
    if tree:
       print rootNode
-   return translateSentence( rootNode, name ) 
+   return translateSentence( rootNode, name=name ) 
+
+
+
+def getWordTranslation(word):
+   if(word in gismuDict):
+      return str(gismuDict[word])
+   if(word in cmavoDict):
+      return str(cmavoDict[word])
+   else:
+      return "Word not known"
 
 
 
 def translateSentence( rootNode, name="" ):
    """get it to translate one level deep"""
    
+   
+   if name == "":
+	  print "there was no name"
+   else:
+	  print "the name is .lee."
+    
    # for efficiency
    global gismuDict
-
       
    # extremely naive 
    threeKoha = rootNode.find( 'KOhA' )
@@ -71,8 +96,9 @@ def translateSentence( rootNode, name="" ):
    gismu1 = str( oneGismu[0].lojban )
    
    for i in range( len(theKoha) ):
-	  if theKoha[i] == "jbovlaste"  and not name == "":
-		 print "replacing a name"
+	  if theKoha[i] == "gismu"  and not name == "":
+		 print "replacing a name with %s "  % name
+		 
 		 theKoha[i] = name 
 		 print theKoha
    
