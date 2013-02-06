@@ -6,7 +6,7 @@ class gismu:
 	    self.englishPhrase=englishPhrase
 	    self.xs=xs
 	def __str__(self):
-		r=self.lojbanWord+":  "
+		r=self.lojbanWord+" - "+self.englishPhrase+": "
 		z=0
 		for x in range(len(self.xs)):
 			r+=("ARG: "+str(x)+" "+self.xs[x])
@@ -142,5 +142,4 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 			retString+=s
 
 	return retString
-
 

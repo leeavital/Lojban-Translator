@@ -28,8 +28,13 @@ def getEnglishTranslation( sentence ):
       print rootNode
    return translateSentence( rootNode ) 
 
-
-
+def getWordTranslation(word):
+   if(word in gismuDict):
+      return str(gismuDict[word])
+   if(word in cmavoDict):
+      return str(cmavoDict[word])
+   else:
+      return "Word not known"
 def translateSentence( rootNode ):
    """get it to translate one level deep"""
    
