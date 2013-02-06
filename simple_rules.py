@@ -30,24 +30,24 @@ def getEnglishTranslation( sentence ):
       return the english translation"""
 
    
-   name = ""
+   # get a list of all the names
+   names = [ str(e) for  e in re.findall( r"\.[^\s]*\.", sentence ) ]
    
-   if len( re.findall( r"\..*\.", sentence) ) > 0:
-	  print "found a name"
-	  name = re.findall( r"\..*\.", sentence)[0]
-	  print name
-	  
-	  sentence = re.sub( r"\..*\.", "ko", sentence)
-
-	  print sentence
    
+   print names 
 
-
+   # replace all occurences with "ko"
+   sentence = re.sub( r"\.[^\s]*\.", "ko", sentence)
+   
+    
+   # make a parse tree
    rootNode = camxes.parse( sentence )
     
    if tree:
       print rootNode
-   return translateSentence( rootNode, name=name ) 
+   
+   
+   return translateSentence( rootNode, names=names ) 
 
 
 
@@ -63,14 +63,14 @@ def getWordTranslation(word):
 
 
 # get the enslish sentence from the parse tree
-def translateSentence( rootNode, name="" ):
+def translateSentence( rootNode, names=[] ):
    """get it to translate one level deep"""
    
    
-   if name == "":
+   if names == []:
 	  print "there was no name"
    else:
-	  print "the name is %s and the sentence is %s" % (name, rootNode.lojban)
+	  print "the name is %s and the sentence is %s" % ( str(names), rootNode.lojban)
     
    # for efficiency
    global gismuDict
@@ -98,12 +98,12 @@ def translateSentence( rootNode, name="" ):
   
    gismu1 = str( oneGismu[0].lojban )
    
+   namesI = 0 
    for i in range( len(theKoha) ):
-	  if theKoha[i] == "ko"  and not name == "":
-		 theKoha[i] = name 
+	  if theKoha[i] == "ko"  and not names == []:
+		 theKoha[i] = names[namesI]
+		 namesI += 1 
    
-   print theKoha
-   print gismu1 
    return getSentenceFromGismu( gismu1, theKoha, gismuDict, cmavoDict ) 
 
 
