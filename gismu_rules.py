@@ -143,3 +143,9 @@ def getSentenceFromGismu(lojbanWord,arguments,dictionary,dictionary2):
 
 	return retString
 
+d=getDict()
+c=getCmavo()
+
+s=getSentenceFromGismu("barda",["gerku","xunre"],d,c)
+
+print(s)
