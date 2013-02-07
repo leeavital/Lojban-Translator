@@ -34,7 +34,6 @@ def getEnglishTranslation( sentence ):
    names = [ str(e) for  e in re.findall( r"\.[^\s]*\.", sentence ) ]
    
    
-   print names 
 
    # replace all occurences with "ko"
    sentence = re.sub( r"\.[^\s]*\.", "ko", sentence)
@@ -67,10 +66,10 @@ def translateSentence( rootNode, names=[] ):
    """get it to translate one level deep"""
    
    
-   if names == []:
-	  print "there was no name"
-   else:
-	  print "the name is %s and the sentence is %s" % ( str(names), rootNode.lojban)
+   # if names == []:
+   #    print "there was no name"
+   # else:
+   #    print "the name is %s and the sentence is %s" % ( str(names), rootNode.lojban)
     
    # for efficiency
    global gismuDict
